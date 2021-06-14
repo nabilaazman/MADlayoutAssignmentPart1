@@ -1,51 +1,89 @@
 import 'package:flutter/material.dart';
-import './livingroom.dart' as livingroom;
-import './allroom.dart' as allroom;
-import './bedroom.dart' as bedroom;
 
-void main() {
-  runApp(new MaterialApp(
-    home: MyApp(),
-  ));
-}
 
-class MyApp extends StatefulWidget {
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
+class Allroom extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primaryColor: Colors.white,
-        ),
-        home: DefaultTabController(
-          length: 3,
-          child: Scaffold(
-            appBar: AppBar(
-              leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
-              title: Text('My Home'),
-              bottom: TabBar(
-                tabs: [
-                  Tab(
-                    child: Text("All"),
+    return new Container(
+        padding: EdgeInsets.all(30.0),
+        child: GridView.count(crossAxisCount: 2, children: <Widget>[
+          Card(
+            margin: EdgeInsets.all(8.0),
+            child: InkWell(
+                splashColor: Colors.white,
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Image('images/button1.PNG'),
+                      Text(
+                        "PlugAmmar",
+                        style: new TextStyle(fontSize: 17.0),
+                      )
+                    ],
                   ),
-                  Tab(
-                    child: Text("LivingRoom"),
-                  ),
-                  Tab(
-                    child: Text("Bedroom"),
-                  ),
-                ],
-              ),
-            ),
-            body: new TabBarView(children: <Widget>[
-              new allroom.Allroom(),
-              new livingroom.Livingroom(),
-              new bedroom.Bedroom()
-            ]),
+                )),
           ),
-        ));
+          Card(
+              margin: EdgeInsets.all(8.0),
+              child: InkWell(
+                  splashColor: Colors.white,
+                  child: Center(
+                      child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                        Image('images/button2.PNG'),
+                        Text("Bilik Hana", style: new TextStyle(fontSize: 17.0))
+                      ])))),
+          Card(
+              margin: EdgeInsets.all(8.0),
+              child: InkWell(
+                  splashColor: Colors.white,
+                  child: Center(
+                      child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                        Image('images/button3.PNG'),
+                        Text("Gate Light Switch",
+                            style: new TextStyle(fontSize: 17.0))
+                      ])))),
+          Card(
+              margin: EdgeInsets.all(8.0),
+              child: InkWell(
+                  splashColor: Colors.white,
+                  child: Center(
+                      child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                        Image('images/button1.PNG'),
+                        Text("Plug 3 patio",
+                            style: new TextStyle(fontSize: 17.0))
+                      ])))),
+          Card(
+              margin: EdgeInsets.all(8.0),
+              child: InkWell(
+                  splashColor: Colors.white,
+                  child: Center(
+                      child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                        Image('images/button1.PNG'),
+                        Text("Parking Lights",
+                            style: new TextStyle(fontSize: 17.0))
+                      ])))),
+          Card(
+              margin: EdgeInsets.all(8.0),
+              child: InkWell(
+                  onTap: () {},
+                  splashColor: Colors.white,
+                  child: Center(
+                      child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                        Image('images/button4.PNG'),
+                        Text("Bridge", style: new TextStyle(fontSize: 17.0))
+                      ])))),
+        ]));
   }
 }
+
